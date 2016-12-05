@@ -17,6 +17,7 @@ var destination = "";
 var frequency;
 var nextArrival;
 var minutesAway;
+var firstTrainTime;
 
 $('#submit').on("click", function (){
 	// body...
@@ -26,7 +27,26 @@ $('#submit').on("click", function (){
 
 	database.ref().push({
 		trainName : trainName,
-		destination : destination
-	});
+		destination : destination,
+		// firstTrainTime : firstTrainTime,
+		// frequency : frequency
+	});//push ends
+
+	$('#trainName').val("");
+	$('#destination').val("");
+
+	return false;
+}); //submit click function ends
+
+// Display on Dom from the database
+
+
+database.ref().on('child_added', function(snapshot){
+	console.log(snapshot.val().trainName);
+	console.log(snapshot.val().destination);
+	// console.log(snapshot.val().frequency);
+
+	$('#trainList').append('<tr><td>' +snapshot.val().trainName+ 
+		'</td><td>'+ snapshot.val().destination+ '</td>')
 
 });
