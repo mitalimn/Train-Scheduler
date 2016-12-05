@@ -10,3 +10,17 @@
   firebase.initializeApp(config);
 
 var database = firebase.database();
+
+//Variables
+var trainName = "";
+var destination = "";
+var frequency;
+var nextArrival;
+var minutesAway;
+
+$('#submit').on("click", function (){
+	// body...
+	trainName = $('#trainName').val().trim();
+	destination = $('#destination').val().trim();
+	console.log("trainName "+ trainName + "destination "+ destination);
+});
