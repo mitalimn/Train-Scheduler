@@ -42,7 +42,32 @@
       </div>
     </div>
 	
+	
+<!-- Form to submit the data into database and display on DOM -->
 
+	<div class="panel panel-default">
+      <div class="panel-heading">Add Train</div>
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label for="trainName">Train Name</label>
+            <input type="text" class="form-control" id="trainName" placeholder="Lake Shore Express">
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" placeholder="Destination">
+          </div>
+          <div class="form-group">
+            <label for="first-train-time">First Train Time (hh:mm Military Time)</label>
+            <input type="text" class="form-control" id="first-train-time" placeholder="Enter time in hh:mm">
+            <div class="form-group">
+              <label for="frequency">Frequency (min)</label>
+              <input type="number" class="form-control" id="frequency" placeholder="Frequency">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-default" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 </body>
-
 </html>
