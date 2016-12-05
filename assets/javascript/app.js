@@ -23,4 +23,10 @@ $('#submit').on("click", function (){
 	trainName = $('#trainName').val().trim();
 	destination = $('#destination').val().trim();
 	console.log("trainName "+ trainName + "destination "+ destination);
+
+	database.ref().push({
+		trainName : trainName,
+		destination : destination
+	});
+
 });
