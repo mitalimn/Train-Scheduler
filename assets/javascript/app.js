@@ -71,11 +71,6 @@ $('#submit').on("click", function() {
 
 
 database.ref().on('child_added', function(snapshot) {
-    console.log(snapshot.val().trainName);
-    console.log(snapshot.val().destination);
-    console.log(snapshot.val().frequency);
-    console.log(snapshot.val().firstTrainTime);
-
     $('#trainList').append('<tr><td>' + snapshot.val().trainName +
         '</td><td>' + snapshot.val().destination +
         '</td><td>' + snapshot.val().frequency +
