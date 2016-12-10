@@ -28,9 +28,7 @@ $('#submit').on("click", function() {
 
     var currentTime = moment();
     // console.log("time now ----" + currentTime);
-    console.log("hhhhhmmmmmm-- " + moment(currentTime).format("hh:mm"));
-
-
+ 
     var difference = moment().diff(moment(arrival), "minutes");
     console.log("difference -- " + difference);
 
@@ -50,7 +48,6 @@ $('#submit').on("click", function() {
     // ------------------------------
     console.log("trainName " + trainName + "destination " + destination +
         "frequency" + frequency);
-
     database.ref().push({
         trainName: trainName,
         destination: destination,
@@ -68,8 +65,6 @@ $('#submit').on("click", function() {
 }); //submit click function ends
 
 // Display on Dom from the database
-
-
 database.ref().on('child_added', function(snapshot) {
     $('#trainList').append('<tr><td>' + snapshot.val().trainName +
         '</td><td>' + snapshot.val().destination +
